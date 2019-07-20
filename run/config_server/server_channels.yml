@@ -30,7 +30,7 @@ epita_adm:
 
     adm_room:
       # NAME
-      name: adm_Epita
+      name: adm_room
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
