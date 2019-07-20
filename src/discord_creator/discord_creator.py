@@ -1,13 +1,14 @@
+import logging
 from typing import Dict, List
-
 import discord
-
 from src.models.permission_group import PermissionGroup
 from src.models.role import Role
 from src.yaml_parser.channels_parser import ChannelParser
 from src.yaml_parser.permissions_parser import PermissionGroupParser
 from src.yaml_parser.role_parser import RoleParser
 from src.yaml_parser.role_promo_parser import RolePromoParser
+
+logger = logging.getLogger()
 
 
 class DiscordCreator:
@@ -45,7 +46,6 @@ class DiscordCreator:
                                         colour=role.color,
                                         hoist=role.mentionable,
                                         mentionable=role.mentionable)
-
             self.all_roles[role_name].set_role(discord_role)
 
     async def create_categories_and_channels(self):
@@ -102,10 +102,12 @@ class DiscordCreator:
                         await discord_channel.set_permissions(role, overwrite=voice_channel.overwrites[role])
 
     async def delete_all(self, channels_to_ignore: List[str], roles_to_ignore: List[str]):
+        logger.info('Deleting channels')
         for channel in self.client.get_guild(601889323801116673).channels:
             if channel.name not in channels_to_ignore:
                 await channel.delete()
 
+        logger.info('Deleting roles')
         for role in self.client.get_guild(601889323801116673).roles:
             if role.name not in roles_to_ignore:
                 await role.delete()
