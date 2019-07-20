@@ -1,3 +1,13 @@
+# General information
 discord_server_id: 601889323801116673
 current_promo: 2025
 token: NjAxODk0MTUyNTQzNjY2MjQ0.XTI7rA.C0dqsVArhxT_SwMicC2dpXMWpfs
+
+# Clear information
+clear: true
+channels_to_ignore:
+  - temp
+roles_to_ignore:
+  - EpiGear
+  - '*'
+  - '@everyone'

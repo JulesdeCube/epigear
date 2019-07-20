@@ -1,4 +1,4 @@
-from typing import Dict
+from typing import Dict, List
 
 import discord
 
@@ -15,7 +15,6 @@ class DiscordCreator:
     roles: Dict[str, Role]
     promo_roles: Dict[str, Role]
     all_roles: Dict[str, Role]
-
     client: discord.Client
     guild: discord.Guild
 
@@ -24,9 +23,6 @@ class DiscordCreator:
         self.permissions_groups = PermissionGroupParser.yaml_to_objects()
         self.roles = RoleParser.yaml_to_objects(self.permissions_groups)
         self.promo_roles = RolePromoParser.yaml_to_objects(current_promo, self.permissions_groups)
-
-        # everyone role =>
-        # self.all_roles: Dict[str, Role] = self.roles
         self.all_roles: Dict[str, Role] = {**self.roles, **self.promo_roles}
         self.client = client
         self.guild = client.get_guild(guild_id)
@@ -104,3 +100,12 @@ class DiscordCreator:
                     await discord_channel.edit(sync_permissions=True)
                     for role in voice_channel.overwrites:
                         await discord_channel.set_permissions(role, overwrite=voice_channel.overwrites[role])
+
+    async def delete_all(self, channels_to_ignore: List[str], roles_to_ignore: List[str]):
+        for channel in self.client.get_guild(601889323801116673).channels:
+            if channel.name not in channels_to_ignore:
+                await channel.delete()
+
+        for role in self.client.get_guild(601889323801116673).roles:
+            if role.name not in roles_to_ignore:
+                await role.delete()

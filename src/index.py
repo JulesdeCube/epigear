@@ -18,22 +18,18 @@ async def on_ready():
     logger.info('We have logged in as {0.user}'.format(client))
 
     discord_creator = DiscordCreator(client, config_bot['current_promo'], config_bot['discord_server_id'])
+
+    if config_bot['clear']:
+        channels_to_ignore = config_bot['channels_to_ignore'] if config_bot['channels_to_ignore'] != None else []
+        roles_to_ignore = config_bot['roles_to_ignore'] if config_bot['roles_to_ignore'] != None else []
+        await discord_creator.delete_all(channels_to_ignore, roles_to_ignore)
+
     await discord_creator.create_role()
     await discord_creator.create_categories_and_channels()
-
-    # await delete_all()
 
 
 def main():
     client.run(config_bot['token'])
-
-
-async def delete_all():
-    validation = input("Are you sure you want to delete ? (Y/N)")
-    if validation != 'Y':
-        return
-    for channel in client.get_guild(601889323801116673).channels:
-        await channel.delete()
 
 
 if __name__ == '__main__':
