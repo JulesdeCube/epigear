@@ -1,5 +1,5 @@
 STAFF_EPILOGIN:
-  name: Staff Epilogin
+  name: Staff EpiLogin
   color: 0xf1c40f
   hoist: true
   permissions: SERVER_ADMIN_PERM

@@ -106,10 +106,10 @@ class DiscordCreator:
                         await discord_channel.set_permissions(role, overwrite=voice_channel.overwrites[role])
 
     async def delete_all(self, channels_to_ignore: List[str], roles_to_ignore: List[str]):
-        # logger.info('Deleting channels')
-        # for channel in self.client.get_guild(self.guild_id).channels:
-        #            if channel.name not in channels_to_ignore:
-        #       await channel.delete()
+        logger.info('Deleting channels')
+        for channel in self.client.get_guild(self.guild_id).channels:
+            if channel.name not in channels_to_ignore:
+                await channel.delete()
 
         logger.info('Deleting roles')
         for role in self.client.get_guild(self.guild_id).roles:

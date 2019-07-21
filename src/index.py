@@ -20,8 +20,8 @@ async def on_ready():
     discord_creator = DiscordCreator(client, config_bot['current_promo'], config_bot['discord_server_id'])
 
     if config_bot['clear']:
-        channels_to_ignore = config_bot['channels_to_ignore'] if config_bot['channels_to_ignore'] != None else []
-        roles_to_ignore = config_bot['roles_to_ignore'] if config_bot['roles_to_ignore'] != None else []
+        channels_to_ignore = config_bot['channels_to_ignore'] if config_bot['channels_to_ignore'] is not None else []
+        roles_to_ignore = config_bot['roles_to_ignore'] if config_bot['roles_to_ignore'] is not None else []
         await discord_creator.delete_all(channels_to_ignore, roles_to_ignore)
 
     await discord_creator.create_role()
