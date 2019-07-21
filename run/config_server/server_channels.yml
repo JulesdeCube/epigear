@@ -3,7 +3,9 @@ epita_adm:
   # NAME
   name: EPITA/ADM👥
   # PERM
-  overwrites: ~
+  overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
@@ -69,7 +71,9 @@ epita_bot:
   # NAME
   name: EPITA/BOT🤖
   # PERM
-  overwrites: ~
+  overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
@@ -134,7 +138,9 @@ epita:
   # NAME
   name: EPITA/ 👍
   # PERM
-  overwrites: ~
+  overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: DEFAULT
   # CHANNELS
@@ -228,7 +234,9 @@ epita_global:
   # NAME
   name: EPITA/GLOBAL/ 🌐
   # PERM
-  overwrites: ~
+  overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: DEFAULT
   # CHANNELS
@@ -281,6 +289,8 @@ epita_promo:
   name: EPITA/PROMO
   # PERM
   overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
     PROMO_N: READ_AND_WRITE
   # EVERYONE
   default_perm: HIDDEN
@@ -684,7 +694,9 @@ epita_bunker:
   # NAME
   name: EPITA/Bunker 🏛
   # PERM
-  overwrites: ~
+  overwrites:
+    STAFF_EPILOGIN: SERVER_ADMIN_PERM
+    ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
