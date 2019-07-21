@@ -48,13 +48,23 @@ The `run` folder contains all the data of the program configuration.
 This folder contain a single file, `default.config.yml`. This file looks like this:
  
 ```yaml
+# General information
 discord_server_id: ~
 current_promo: ~
 token: ~
+
+# Clear information
+clear: false
+channels_to_ignore: ~ 
+roles_to_ignore:   
+    - '@everyone' 
 ```
 
 You will therefore have to modify in this file the `discord_server_id` by the one of the server where you want to run the bot.
-Also remember to put the `token` of your bot discord
+Also remember to put the `token` of your bot discord.
+
+You can also choose to delete the roles and channels of the server in question before creating the new roles and channels.
+The `channels_to_ignore` and `roles_to_ignore` are lists of name of role / channel
 
 > The `current_promo` line is only used for EPITA, it is not to be filled in for other uses
 
@@ -96,28 +106,26 @@ The file contains the list of categories and channels for the server
 
 For example:
 
-```yml
-epita_adm:                   # The name of the object
-  name: EPITA/ADM👥          # Name of the category 
-  overwrites: ~              # General permission (link to perms_group.yml)
-  default_perm: HIDDEN       # The default perm 
+```yaml
+epita_promo:                    # The name of the object
+  name: EPITA/PROMO             # The name of the category
+  overwrites:                   # The general permission of the category
+    PROMO_N: READ_AND_WRITE     # Role (from roles.yml): perms group (from perms_group.yml)
+  default_perm: HIDDEN          # Default perm (for everyone role)
 
-  channels:                  # List of channel 
-    administration:          # Name of the object
-      name: administration   # Name of the channel
-      overwrites:            # Overwrited permission
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM   # role (link to roles.yml): permisision (link to perms_group.yml)
-        ADMIN: ADMIN_PERM                   # Also
-      default_perm: HIDDEN   # Default perm
-
-  vocal_channels:            # Same things for vocal channel
-    reunion:
-      name: Réunion
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+  channels:                     # The list of texts channel
+    promo:                      # The name of the object
+      name: PROMO               # The name of the channel (in discord)
+      overwrites:               # The overwrited permission
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM   # Role (from roles.yml): perms group (from perms_group.yml)
         ADMIN: ADMIN_PERM
-        MODO: VOCAL
-        ADM: VOCAL
-        PROF: VOCAL
-      default_perm: HIDDEN
+      default_perm: HIDDEN      # Default perm (for everyone role)
+
+  vocal_channels:               # The list of voice channel
+    general:                    # The name of the object
+      name: General             # The name of the voice channel (in discord)
+      overwrites: ~             # The overwrited permissions
+      default_perm: HIDDEN      # The default perm
 ```
+
+To start the bot, just start the `index.py` file in the `run` folder.
