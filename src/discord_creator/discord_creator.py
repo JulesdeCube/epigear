@@ -1,6 +1,8 @@
 import logging
 from typing import Dict, List
+
 import discord
+
 from src.models.permission_group import PermissionGroup
 from src.models.role import Role
 from src.yaml_parser.channels_parser import ChannelParser
@@ -18,6 +20,7 @@ class DiscordCreator:
     all_roles: Dict[str, Role]
     client: discord.Client
     guild: discord.Guild
+    guild_id: int
 
     def __init__(self, client: discord.Client, current_promo: int, guild_id: int):
         # Get data from parser
@@ -27,6 +30,7 @@ class DiscordCreator:
         self.all_roles: Dict[str, Role] = {**self.roles, **self.promo_roles}
         self.client = client
         self.guild = client.get_guild(guild_id)
+        self.guild_id = guild_id
 
     async def create_role(self):
         for role_name in self.all_roles:
@@ -102,12 +106,17 @@ class DiscordCreator:
                         await discord_channel.set_permissions(role, overwrite=voice_channel.overwrites[role])
 
     async def delete_all(self, channels_to_ignore: List[str], roles_to_ignore: List[str]):
-        logger.info('Deleting channels')
-        for channel in self.client.get_guild(601889323801116673).channels:
-            if channel.name not in channels_to_ignore:
-                await channel.delete()
+        # logger.info('Deleting channels')
+        # for channel in self.client.get_guild(self.guild_id).channels:
+        #            if channel.name not in channels_to_ignore:
+        #       await channel.delete()
 
         logger.info('Deleting roles')
-        for role in self.client.get_guild(601889323801116673).roles:
+        for role in self.client.get_guild(self.guild_id).roles:
             if role.name not in roles_to_ignore:
                 await role.delete()
+
+    async def get_roles_id(self):
+        for role in self.all_roles:
+            discord_role: discord.Role = self.all_roles[role].role_discord
+            print(f'{discord_role.name} : {discord_role.id}')

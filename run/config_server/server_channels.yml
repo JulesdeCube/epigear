@@ -729,7 +729,7 @@ vocal:
 
     no-mic:
       # NAME
-      name: mic
+      name: no-mic
       #PERM
       overwrites: ~
       default_perm: HIDDEN

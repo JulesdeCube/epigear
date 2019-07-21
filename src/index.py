@@ -26,8 +26,10 @@ async def on_ready():
 
     await discord_creator.create_role()
     await discord_creator.create_categories_and_channels()
+    await discord_creator.get_roles_id()
 
     quit()
+
 
 def main():
     client.run(config_bot['token'])
