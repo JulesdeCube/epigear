@@ -87,9 +87,9 @@ epita_bot:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: READ_ONLY
-        EXTERNE: HIDDEN
-        EPITA: HIDDEN
-      default_perm: READ_AND_WRITE_WITHOUT_HISTORY
+        EXTERNE: READ_ONLY
+        EPITA: READ_ONLY
+      default_perm: READ_ONLY
 
     epilogin_logs:
       # NAME
