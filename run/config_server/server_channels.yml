@@ -685,7 +685,7 @@ epita_divers:
       name: spam
       #PERM
       overwrites: ~
-      default_perm: HIDDEN
+      default_perm: DEFAULT
 
   # VOCAL CHANNELS
   vocal_channels: ~
