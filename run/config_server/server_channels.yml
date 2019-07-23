@@ -91,18 +91,6 @@ epita_bot:
         EPITA: READ_ONLY
       default_perm: READ_ONLY
 
-    regles:
-      # NAME
-      name: regles_et_infos
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_ONLY
-        EXTERNE: READ_ONLY
-        EPITA: READ_ONLY
-      default_perm: READ_ONLY
-
     epilogin_logs:
       # NAME
       name: epilogin_logs
@@ -158,9 +146,21 @@ epita:
   # CHANNELS
   channels:
 
+    regles:
+      # NAME
+      name: regles_et_infos
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        MODO: READ_ONLY
+        EXTERNE: READ_ONLY
+        EPITA: READ_ONLY
+      default_perm: READ_ONLY
+
     annonces:
       # NAME
-      name: annonces
+      name: ❗-annonces
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
@@ -256,7 +256,7 @@ epita_global:
 
     general:
       # NAME
-      name: general
+      name: ✨-general
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM

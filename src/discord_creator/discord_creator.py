@@ -65,7 +65,8 @@ class DiscordCreator:
                 discord_category = await self.guild.create_category_channel(name=category.name,
                                                                             overwrites=category.overwrites)
             else:
-                await discord_category.edit(overwrites=category.overwrites)
+                for role in category.overwrites:
+                    await discord_category.set_permissions(role, overwrite=category.overwrites[role])
 
             # Create discord channel
             for text_channel_name in category.channels:
