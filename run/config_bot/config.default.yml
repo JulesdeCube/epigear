@@ -4,6 +4,7 @@ current_promo: ~
 token: ~
 
 # Clear information
-clear: false
+clear_channels: false
 channels_to_ignore: ~
+clear_roles: false
 roles_to_ignore: ~
