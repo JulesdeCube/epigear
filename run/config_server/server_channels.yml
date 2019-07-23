@@ -81,7 +81,19 @@ epita_bot:
 
     presentation:
       # NAME
-      name: presentation
+      name: bienvenue
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        MODO: READ_ONLY
+        EXTERNE: READ_ONLY
+        EPITA: READ_ONLY
+      default_perm: READ_ONLY
+
+    regles:
+      # NAME
+      name: regles_et_infos
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
