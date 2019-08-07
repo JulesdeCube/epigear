@@ -91,6 +91,18 @@ epita_bot:
         EPITA: READ_ONLY
       default_perm: READ_ONLY
 
+    contacts:
+      # NAME
+      name: contacts_staff
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        MODO: MODO_PERM
+        EXTERNE: HIDDEN
+        EPITA: HIDDEN
+      default_perm: READ_AND_WRITE
+
     epilogin_logs:
       # NAME
       name: epilogin_logs
@@ -261,7 +273,9 @@ epita_global:
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-      default_perm: READ_AND_WRITE
+        EPITA: READ_AND_WRITE
+        EXTERNE: READ_AND_WRITE
+      default_perm: HIDDEN
 
     qcm_exams:
       # NAME
@@ -697,7 +711,7 @@ epita_divers:
       name: spam
       #PERM
       overwrites: ~
-      default_perm: DEFAULT
+      default_perm: HIDDEN
 
   # VOCAL CHANNELS
   vocal_channels: ~
