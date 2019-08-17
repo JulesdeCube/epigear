@@ -5,6 +5,13 @@ STAFF_EPILOGIN:
   permissions: SERVER_ADMIN_PERM
   mentionable: true
 
+SERVER_ADMIN:
+  name: Admin
+  color: 0xf1c40f
+  hoist: false
+  permissions: SERVER_ADMIN_PERM
+  mentionable: true
+  
 ADMIN:
   name: Admin
   color: 0xf1c40f
