@@ -13,7 +13,7 @@ epita_adm:
 
     administration:
       # NAME
-      name: administration
+      name: admin
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
@@ -22,7 +22,7 @@ epita_adm:
 
     moderation:
       # NAME
-      name: moderation
+      name: modo
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
@@ -32,7 +32,7 @@ epita_adm:
 
     adm_room:
       # NAME
-      name: adm_room
+      name: adm
       #PERM
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
@@ -40,9 +40,10 @@ epita_adm:
         MODO: MODO_PERM
         ADM: MANAGE_MESSAGE
         PROF: MANAGE_MESSAGE
+        ACDC: DEFAULT
       default_perm: HIDDEN
 
-    acdc_room:
+    acdc:
       # NAME
       name: acdc_room
       #PERM
@@ -53,19 +54,7 @@ epita_adm:
       default_perm: HIDDEN
 
   # VOCAL CHANNELS
-  vocal_channels:
-
-    reunion:
-      # NAME
-      name: Réunion
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: VOCAL
-        ADM: VOCAL
-        PROF: VOCAL
-      default_perm: HIDDEN
+  vocal_channels: ~
 
 epita_bot:
   # NAME
@@ -408,7 +397,8 @@ epita_matieres:
       # NAME
       name: prog
       #PERM
-      overwrites: ~
+      overwrites: 
+        ACDC: MANAGE_MESSAGE
       default_perm: HIDDEN
     maths:
       # NAME
