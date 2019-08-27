@@ -6,7 +6,7 @@ STAFF_EPILOGIN:
   mentionable: true
 
 SERVER_ADMIN:
-  name: Admin
+  name: Server_Admin
   color: 0xf1c40f
   hoist: false
   permissions: SERVER_ADMIN_PERM
@@ -23,14 +23,14 @@ ADM:
   name: Administration
   color: 0xe74c3c
   hoist: true
-  permissions: MANAGE_MESSAGE
+  permissions: DEFAULT
   mentionable: false
 
 PROF:
   name: Profs
   color: 0xe74c3c
   hoist: true
-  permissions: MANAGE_MESSAGE
+  permissions: DEFAULT
   mentionable: false
 
 MODO:
@@ -44,7 +44,7 @@ ACDC:
   name: ACDC
   color: 0x8c0334
   hoist: true
-  permissions: MANAGE_MESSAGE
+  permissions: DEFAULT
   mentionable: true
 
 # Class
