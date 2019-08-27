@@ -150,7 +150,7 @@ RENNES:
 
 STRASBOURG:
   name: Strasbourg
-  color: 0xb2d156
+  color: 0x5fe511
   permissions: DEFAULT
   hoist: true
   mentionable: false
