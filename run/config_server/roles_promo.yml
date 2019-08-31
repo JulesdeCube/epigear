@@ -2,32 +2,32 @@ roles_template:
   PROMO_N_PLUS_1:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   PROMO_N:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   PROMO_N_MINUS_1:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   PROMO_N_MINUS_2:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   PROMO_N_MINUS_3:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   PROMO_N_MINUS_4:
     hoist: true
     permissions: DEFAULT
-    mentionable: true
+    mentionable: false
 
   #PROMO_N_MINUS_5:
   #    hoist: true
