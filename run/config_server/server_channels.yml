@@ -171,18 +171,6 @@ epita:
         EPITA: READ_ONLY
       default_perm: READ_ONLY
 
-    info_exam:
-      # NAME
-      name: info_exam
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
-        ACDC: READ_AND_WRITE
-        EPITA: READ_ONLY
-      default_perm: HIDDEN
-
     associations:
       # NAME
       name: associations
@@ -205,21 +193,6 @@ epita:
         MODO: READ_AND_WRITE
         EPITA: READ_ONLY
       default_perm: READ_ONLY
-
-    acdc_eleves:
-      # NAME
-      name: acdc-eleves
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        ACDC: MANAGE_MESSAGE
-        PROMO_N: READ_ONLY
-        PROMO_N_MINUS_1: READ_ONLY
-        PROMO_N_MINUS_2: READ_ONLY
-        PROMO_N_MINUS_3: READ_ONLY
-      default_perm: HIDDEN
-
 
     liens_utiles:
       # NAME
@@ -328,6 +301,46 @@ epita_promo:
       overwrites:
         STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
+      default_perm: HIDDEN
+
+    info_exam:
+      # NAME
+      name: info_exam
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        MODO: READ_AND_WRITE
+        ACDC: READ_AND_WRITE
+        PROF: READ_AND_WRITE
+        EPITA: READ_ONLY
+      default_perm: HIDDEN
+
+    info_mimos:
+      # NAME
+      name: info_mimos
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        MODO: READ_AND_WRITE
+        ACDC: READ_AND_WRITE
+        PROF: READ_AND_WRITE
+        EPITA: READ_ONLY
+      default_perm: HIDDEN
+
+    acdc_eleves:
+      # NAME
+      name: acdc-eleves
+      #PERM
+      overwrites:
+        STAFF_EPILOGIN: SERVER_ADMIN_PERM
+        ADMIN: ADMIN_PERM
+        ACDC: MANAGE_MESSAGE
+        PROMO_N: READ_ONLY
+        PROMO_N_MINUS_1: READ_ONLY
+        PROMO_N_MINUS_2: READ_ONLY
+        PROMO_N_MINUS_3: READ_ONLY
       default_perm: HIDDEN
 
     delegues:
