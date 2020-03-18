@@ -46,6 +46,7 @@ class ConfigBuilder:
         return name.upper()
 
     def create_config(self):
+        logger.info("Creating config files for server {}".format(self.guild.name))
         roles = {}
         for role in reversed(self.guild.roles):
             if role.name == '@everyone':
@@ -55,8 +56,9 @@ class ConfigBuilder:
                                                               "permissions": self.get_perm_group(role.permissions),
                                                               "hoist": role.hoist,
                                                               "mentionable": role.mentionable}
-        with open(r'run/config_server/roles_{}.yml'.format(self.guild.name), 'w') as stream:
-            yaml.dump(roles, stream, default_flow_style=False, sort_keys=False, encoding='utf-16-le')
+        with open(r'run/config_server/roles_{}.yml'.format(self.guild.name), 'w', encoding="utf8") as stream:
+            yaml.safe_dump(roles, stream, default_flow_style=False, sort_keys=False, encoding='utf-8',
+                           allow_unicode=True)
         categories: Dict = {}
         for cat in self.guild.categories:
             text_channels = {}
@@ -96,5 +98,6 @@ class ConfigBuilder:
                                                                   "channels": text_channels,
                                                                   "vocal_channels": voice_channels}
 
-        with open(r'run/config_server/server_channels_{}.yml'.format(self.guild.name), 'w') as stream:
-            yaml.dump(categories, stream, default_flow_style=False, sort_keys=False, encoding='utf-16-le')
+        with open(r'run/config_server/server_channels_{}.yml'.format(self.guild.name), 'w', encoding="utf8") as stream:
+            yaml.safe_dump(categories, stream, default_flow_style=False, sort_keys=False, encoding='utf-8',
+                           allow_unicode=True)
