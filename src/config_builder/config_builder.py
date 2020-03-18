@@ -48,6 +48,8 @@ class ConfigBuilder:
     def create_config(self):
         roles = {}
         for role in reversed(self.guild.roles):
+            if role.name == '@everyone':
+                continue
             roles[ConfigBuilder.normalize_name(role.name)] = {"name": role.name,
                                                               "color": "0x" + str(role.color)[1:],
                                                               "permissions": self.get_perm_group(role.permissions),
@@ -64,7 +66,7 @@ class ConfigBuilder:
                 overwrites = {}
                 if not chan.permissions_synced:
                     for role, overwrite in chan.overwrites.items():
-                        if type(role) != discord.Role:
+                        if type(role) != discord.Role or role.name == "@everyone":
                             continue
                         overwrites[ConfigBuilder.normalize_name(role.name)] = self.get_perm_overwrite_group(overwrite)
                 default = self.get_perm_overwrite_group(chan.overwrites_for(self.guild.default_role))
@@ -75,7 +77,7 @@ class ConfigBuilder:
                 overwrites = {}
                 if not chan.permissions_synced:
                     for role, overwrite in chan.overwrites.items():
-                        if type(role) != discord.Role:
+                        if type(role) != discord.Role or role.name == "@everyone":
                             continue
                         overwrites[ConfigBuilder.normalize_name(role.name)] = self.get_perm_overwrite_group(overwrite)
                 default = self.get_perm_overwrite_group(chan.overwrites_for(self.guild.default_role))
@@ -84,7 +86,7 @@ class ConfigBuilder:
                                                                            "default_perm": default}
             overwrites = {}
             for role, overwrite in cat.overwrites.items():
-                if type(role) != discord.Role:
+                if type(role) != discord.Role or role.name == "@everyone":
                     continue
                 overwrites[ConfigBuilder.normalize_name(role.name)] = self.get_perm_overwrite_group(overwrite)
             default = self.get_perm_overwrite_group(cat.overwrites_for(self.guild.default_role))
