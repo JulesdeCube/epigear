@@ -12,7 +12,7 @@ with open('run/config_bot/config.yml', 'r') as stream:
     config_bot = yaml.safe_load(stream)
 
 client = discord.Client()
-mode = "builder"
+mode = "build"
 
 
 async def create():
@@ -34,12 +34,13 @@ async def build():
     config_builder = ConfigBuilder(client, config_bot['discord_server_id'])
     config_builder.create_config()
 
+
 @client.event
 async def on_ready():
     logger.info('We have logged in as {0.user}'.format(client))
-    if mode == 'creator':
+    if mode == 'create':
         await create()
-    elif mode == 'builder':
+    elif mode == 'build':
         await build()
     quit()
 
@@ -52,7 +53,7 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('-d', '--debug', action='store_true',
                         help="show debug messages")
-    parser.add_argument('-m', '--mode', default='creator',
+    parser.add_argument('-m', '--mode', default='create',
                         help="show debug messages")
     args = parser.parse_args()
     define_logger(args)
