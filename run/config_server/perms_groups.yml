@@ -47,7 +47,9 @@ ADMIN_PERM:
   manage_nicknames: true
   manage_roles: true
   manage_emojis: true
+  manage_webhooks: true
   manage_channels: true
+  manage_guild: true
 
   # General permission
   change_nickname: true
@@ -81,6 +83,7 @@ MODO_PERM:
   manage_roles: true
   manage_emojis: true
   manage_channels: true
+  manage_nicknames: true
 
   # General permission
   change_nickname: true
@@ -93,6 +96,7 @@ MODO_PERM:
   embed_links: true
   attach_files: true
   read_message_history: true
+  mention_everyone: true
   external_emojis: true
 
   # Voice channels permissions
