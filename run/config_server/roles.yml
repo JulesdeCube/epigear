@@ -1,16 +1,26 @@
-STAFF_EPILOGIN:
-  name: Staff Epilogin
-  color: 0xf1c40f
-  hoist: true
-  permissions: SERVER_ADMIN_PERM
-  mentionable: true
 
 SERVER_ADMIN:
-  name: Server_Admin
+  name: Server Admin
   color: 0xf1c40f
   hoist: false
   permissions: SERVER_ADMIN_PERM
   mentionable: true
+  
+# -------------------------- Bot --------------------------
+SEPARATOR_BOT:
+  name: ------Bot------
+  color: 0x0b0b0b
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
+    
+# -------------------------- Staff --------------------------
+SEPARATOR_STAFF:
+  name: ------Staff------
+  color: 0x0b0b0b
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
   
 ADMIN:
   name: Admin
@@ -20,7 +30,7 @@ ADMIN:
   mentionable: true
 
 ADM:
-  name: Administration
+  name: Staff Epita
   color: 0xe74c3c
   hoist: true
   permissions: DEFAULT
@@ -40,14 +50,57 @@ MODO:
   permissions: MODO_PERM
   mentionable: true
 
-ACDC:
-  name: ACDC
-  color: 0x8c0334
-  hoist: true
+ACU:
+  name: ACU
+  color: 0x131212
   permissions: DEFAULT
+  hoist: false
+  mentionable: false
+
+YAKA:
+  name: YAKA
+  color: 0x239795
+  permissions: DEFAULT
+  hoist: false
+  mentionable: false
+
+ASM:
+  name: ASM
+  color: 0x6fe532
+  permissions: DEFAULT
+  hoist: true
   mentionable: true
 
-# Class
+ASA:
+  name: ASA
+  color: 0x00acff
+  permissions: DEFAULT
+  hoist: false
+  mentionable: false
+  
+ACDC:
+  name: ACDC
+  color: 0xad1457
+  permissions: DEFAULT
+  hoist: false
+  mentionable: false
+
+ASSISTANTS:
+  name: Assistants
+  color: 0x6fe532
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
+
+# -------------------------- Group --------------------------
+
+SEPARATOR_GROUP:
+  name: ------Group------
+  color: 0x0b0b0b
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
+
 A1:
   name: A1
   color: 0x1abc9c
@@ -105,22 +158,29 @@ D2:
   mentionable: true
 
 INT1:
-  name: INT1
+  name: ENG1
   color: 0xe67e22
   permissions: DEFAULT
   hoist: true
   mentionable: true
 
 INT2:
-  name: INT2
+  name: ENG2
   color: 0xa84300
   permissions: DEFAULT
   hoist: true
   mentionable: true
 
 INT3:
-  name: INT3
+  name: ENG3
   color: 0x992d22
+  permissions: DEFAULT
+  hoist: true
+  mentionable: true
+
+SHARP:
+  name: SHARP
+  color: 0x5f32ff
   permissions: DEFAULT
   hoist: true
   mentionable: true
@@ -140,7 +200,6 @@ TOULOUSE:
   hoist: true
   mentionable: false
 
-
 RENNES:
   name: Rennes
   color: 0x339914
@@ -155,13 +214,24 @@ STRASBOURG:
   hoist: true
   mentionable: false
 
-SHARP:
-  name: SHARP
-  color: 0x5f32ff
+PARIS:
+  name: Paris
+  color: 0x00baff
   permissions: DEFAULT
   hoist: true
-  mentionable: true
+  mentionable: false
 
+
+# -------------------------- Promo --------------------------
+
+SEPARATOR_PROMO:
+  name: ------Promo------
+  color: 0x0b0b0b
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
+  
+  
 ALUMNI:
   name: Alumni
   color: 0x785bc4
@@ -169,6 +239,15 @@ ALUMNI:
   hoist: true
   mentionable: false
 
+# -------------------------- Miscellaneous --------------------------
+
+SEPARATOR_GROUP:
+  name: ------Miscellaneous------
+  color: 0x0b0b0b
+  hoist: false
+  permissions: DEFAULT
+  mentionable: false
+  
 ASSO:
   name: Asso
   color: 0x000000
@@ -176,37 +255,9 @@ ASSO:
   hoist: true
   mentionable: false
 
-PARIS:
-  name: Paris
-  color: 0x206694
-  permissions: DEFAULT
-  hoist: true
-  mentionable: false
-
-ACU:
-  name: ACU
-  color: 0xc27c0e
-  permissions: DEFAULT
-  hoist: true
-  mentionable: false
-
-ASM:
-  name: ASM
-  color: 0x6fe532
-  permissions: DEFAULT
-  hoist: true
-  mentionable: false
-
-YAKA:
-  name: YAKA
-  color: 0x239795
-  permissions: DEFAULT
-  hoist: true
-  mentionable: false
-
 DELEGUE:
-  name: Delegue
-  color: 0xd3a068
+  name: Délégué(e)
+  color: 0x6973e7
   permissions: DEFAULT
   hoist: false
   mentionable: false
@@ -218,9 +269,9 @@ EXTERNE:
   hoist: true
   mentionable: false
 
-EPITA:
-  name: epita
-  color: 0
+CONFIRMED:
+  name: Confirmed
+  color: 0x1ad417
   hoist: false
   permissions: DEFAULT
   mentionable: false

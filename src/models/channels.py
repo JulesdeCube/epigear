@@ -1,6 +1,7 @@
 from typing import Dict
 from discord import Role as RoleDiscord
 from discord import PermissionOverwrite
+from discord import CategoryChannel, TextChannel, VoiceChannel
 
 from src.utils import channel_name_format
 from src.utils import category_name_format

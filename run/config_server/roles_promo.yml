@@ -37,7 +37,7 @@ roles_template:
 promos:
   2019:
     name: 2019
-    color: 0xffffff
+    color: 0xc09947
   2020:
     name: 2020
     color: 0x230138

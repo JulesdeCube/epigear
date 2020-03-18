@@ -177,3 +177,15 @@ Note that in discord, the name of the channels and categories follow some rules 
 You can write the names you want in the config file but they will not appear in discord as they are written here
 
 To start the bot, just start the `index.py` file in the `run` folder.
+
+## Config Builder Mod
+
+In addition to the default mode that allows you to create channels, you can use the bot to create a config from a server.
+To do that use the argument :  
+```
+-m build
+```
+
+The bot will then read the roles and channels from the server that you specified in `config.yml`
+and create 2 news files `roles_name_of_the_server.yml` and `server_channels_name_of_the_server.yml` that you can use 
+afterward to build another server with thing config.

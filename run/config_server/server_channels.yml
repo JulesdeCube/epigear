@@ -4,7 +4,6 @@ epita_adm:
   name: EPITA/ADM👥
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
@@ -13,44 +12,41 @@ epita_adm:
 
     administration:
       # NAME
-      name: admin
+      name: administration
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
       default_perm: HIDDEN
 
     moderation:
       # NAME
-      name: modo
+      name: modération
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
       default_perm: HIDDEN
 
     adm_room:
       # NAME
-      name: adm
+      name: staff_epita
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
         ADM: MANAGE_MESSAGE
         PROF: MANAGE_MESSAGE
-        ACDC: DEFAULT
+        ASSISTANTS: DEFAULT
       default_perm: HIDDEN
 
-    acdc:
+    assistants:
       # NAME
-      name: acdc_room
+      name: acdc
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        ACDC: MANAGE_MESSAGE
+        MODO: MODO_PERM
+        ASSISTANTS: MANAGE_MESSAGE
       default_perm: HIDDEN
 
   # VOCAL CHANNELS
@@ -61,7 +57,6 @@ epita_bot:
   name: EPITA/BOT🤖
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
@@ -73,11 +68,10 @@ epita_bot:
       name: bienvenue
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: READ_ONLY
         EXTERNE: READ_ONLY
-        EPITA: READ_ONLY
+        CONFIRMED: READ_ONLY
       default_perm: READ_ONLY
 
     contacts:
@@ -85,39 +79,17 @@ epita_bot:
       name: contacts_staff
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
         EXTERNE: HIDDEN
-        EPITA: HIDDEN
+        CONFIRMED: HIDDEN
       default_perm: READ_AND_WRITE
-
-    epilogin_logs:
-      # NAME
-      name: epilogin_logs
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_ONLY
-      default_perm: HIDDEN
-
-    epilogin_admin:
-      # NAME
-      name: epilogin_admin
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_ONLY
-      default_perm: HIDDEN
 
     epimodo_logs:
       # NAME
       name: epimodo_logs
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: READ_ONLY
       default_perm: HIDDEN
@@ -127,7 +99,6 @@ epita_bot:
       name: epimodo_requests
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
       default_perm: HIDDEN
@@ -135,12 +106,13 @@ epita_bot:
   # VOCAL CHANNELS
   vocal_channels: ~
 
+
+
 epita:
   # NAME
   name: EPITA/ 👍
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: DEFAULT
@@ -149,26 +121,24 @@ epita:
 
     regles:
       # NAME
-      name: regles_et_infos
+      name: infos_et_règles
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: READ_ONLY
         EXTERNE: READ_ONLY
-        EPITA: READ_ONLY
+        CONFIRMED: READ_ONLY
       default_perm: READ_ONLY
 
     annonces:
       # NAME
-      name: ❗-annonces
+      name: annonces
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
+        MODO: MODO_PERM
         ACDC: READ_AND_WRITE
-        EPITA: READ_ONLY
+        CONFIRMED: READ_ONLY
       default_perm: READ_ONLY
 
     associations:
@@ -176,97 +146,93 @@ epita:
       name: associations
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
+        MODO: MODO_PERM
         ASSO: READ_AND_WRITE
-        EPITA: READ_ONLY
+        CONFIRMED: READ_ONLY
       default_perm: READ_ONLY
 
     vie_etudiante:
       # NAME
-      name: vie_etudiante
+      name: vie_étudiante
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
-        EPITA: READ_ONLY
+        MODO: MODO_PERM
+        CONFIRMED: READ_ONLY
       default_perm: READ_ONLY
+
+    info_exam:
+      # NAME
+      name: info_exam
+      #PERM
+      overwrites:
+        ADMIN: ADMIN_PERM
+        MODO: MODO_PERM
+        ACDC: MANAGE_MESSAGE
+        PROF: MANAGE_MESSAGE
+        CONFIRMED: READ_ONLY
+      default_perm: HIDDEN
 
     liens_utiles:
       # NAME
       name: liens_utiles
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
       default_perm: READ_ONLY
 
     objets_trouves:
       # NAME
-      name: objets_trouves
+      name: objets_trouvés
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         ACDC: MANAGE_MESSAGE
+        MODO: MODO_PERM
       default_perm: READ_ONLY
 
   # VOCAL CHANNELS
   vocal_channels: ~
+
+
 
 epita_global:
   # NAME
   name: EPITA/GLOBAL/ 🌐
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: DEFAULT
   # CHANNELS
   channels:
-
     general:
       # NAME
-      name: ✨-general
+      name: général
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        EPITA: READ_AND_WRITE
+        CONFIRMED: READ_AND_WRITE
         EXTERNE: READ_AND_WRITE
       default_perm: HIDDEN
 
     qcm_exams:
       # NAME
-      name: qcm-exams
+      name: qcm_exams
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        EPITA: READ_AND_WRITE
-      default_perm: HIDDEN
-
-    profs_eleves:
-      # NAME
-      name: profs-eleves
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        EPITA: READ_AND_WRITE
+        CONFIRMED: READ_AND_WRITE
       default_perm: HIDDEN
 
     cgu_faq:
       # NAME
-      name: cgu-faq
+      name: cgu_faq
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-        EPITA: READ_AND_WRITE
+        CONFIRMED: READ_AND_WRITE
       default_perm: HIDDEN
 
   # VOCAL CHANNELS
@@ -277,80 +243,26 @@ epita_promo:
   name: EPITA/PROMO
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
     PROMO_N: READ_AND_WRITE
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
   channels:
-
     promo:
       # NAME
       name: PROMO
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
       default_perm: HIDDEN
 
     presentation:
       # NAME
-      name: presentation
+      name: présentation
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
-      default_perm: HIDDEN
-
-    info_exam:
-      # NAME
-      name: info_exam
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
-        ACDC: READ_AND_WRITE
-        PROF: READ_AND_WRITE
-        EPITA: READ_ONLY
-      default_perm: HIDDEN
-
-    info_mimos:
-      # NAME
-      name: info_mimos
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        MODO: READ_AND_WRITE
-        ACDC: READ_AND_WRITE
-        PROF: READ_AND_WRITE
-        EPITA: READ_ONLY
-      default_perm: HIDDEN
-
-    acdc_eleves:
-      # NAME
-      name: acdc-eleves
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        ACDC: MANAGE_MESSAGE
-        PROMO_N: READ_ONLY
-        PROMO_N_MINUS_1: READ_ONLY
-        PROMO_N_MINUS_2: READ_ONLY
-        PROMO_N_MINUS_3: READ_ONLY
-      default_perm: HIDDEN
-
-    delegues:
-      # NAME
-      name: delegues
-      #PERM
-      overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
-        ADMIN: ADMIN_PERM
-        DELEGUE: READ_AND_WRITE
       default_perm: HIDDEN
 
   # VOCAL CHANNELS
@@ -361,7 +273,6 @@ epita_matieres:
   name: EPITA/MATIERES/ 📚
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
     MODO: MODO_PERM
     ADM: HIDDEN
@@ -381,7 +292,6 @@ epita_matieres:
       name: corrections
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
         ADM: HIDDEN
@@ -464,7 +374,6 @@ epita_projet:
   name: EPITA/PROJET/ 💻
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
     MODO: MODO_PERM
     ADM: HIDDEN
@@ -479,12 +388,11 @@ epita_projet:
   # CHANNELS
   channels:
 
-    corrections:
+    exemples:
       # NAME
-      name: exemple
+      name: exemples
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
         ADM: HIDDEN
@@ -511,7 +419,6 @@ epita_groups:
   name: EPITA/GROUPES 👥
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
@@ -576,21 +483,21 @@ epita_groups:
       default_perm: HIDDEN
     INT1:
       # NAME
-      name: int1
+      name: eng1
       #PERM
       overwrites:
         INT1: READ_AND_WRITE
       default_perm: HIDDEN
     INT2:
       # NAME
-      name: int2
+      name: eng2
       #PERM
       overwrites:
         INT2: READ_AND_WRITE
       default_perm: HIDDEN
     INT3:
       # NAME
-      name: int3
+      name: eng3
       #PERM
       overwrites:
         INT3: READ_AND_WRITE
@@ -639,7 +546,6 @@ epita_divers:
   name: EPITA/DIVERS/ 🎮
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
     MODO: MODO_PERM
     ADM: HIDDEN
@@ -649,6 +555,7 @@ epita_divers:
     PROMO_N_MINUS_2: READ_AND_WRITE
     PROMO_N_MINUS_3: READ_AND_WRITE
     PROMO_N_MINUS_4: READ_AND_WRITE
+    EXTERNE: READ_AND_WRITE
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
@@ -697,9 +604,9 @@ epita_divers:
       #PERM
       overwrites: ~
       default_perm: HIDDEN
-    logements:
+    logement:
       # NAME
-      name: logements
+      name: logement
       #PERM
       overwrites: ~
       default_perm: HIDDEN
@@ -724,7 +631,6 @@ epita_bunker:
   name: EPITA/Bunker 🏛
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
   # EVERYONE
   default_perm: HIDDEN
@@ -736,7 +642,6 @@ epita_bunker:
       name: zone_de_quarantaine
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: MODO_PERM
       default_perm: HIDDEN
@@ -749,62 +654,192 @@ epita_bunker:
       name: radio_quarantaine
       #PERM
       overwrites:
-        STAFF_EPILOGIN: SERVER_ADMIN_PERM
         ADMIN: ADMIN_PERM
         MODO: VOCAL
       default_perm: HIDDEN
 
 vocal:
   # NAME
-  name: VOCAL
+  name: EPITA/VOCAL
   # PERM
   overwrites:
-    STAFF_EPILOGIN: SERVER_ADMIN_PERM
     ADMIN: ADMIN_PERM
-    EPITA: READ_AND_WRITE_AND_VOCAL
-    EXTERNE: READ_AND_WRITE_AND_VOCAL
+    MODO: MODO_PERM
+    ASSISTANTS: MODO_PERM
   # EVERYONE
   default_perm: HIDDEN
   # CHANNELS
   channels:
 
-    no-mic:
+    a1:
       # NAME
-      name: no-mic
+      name: a1_chat
       #PERM
-      overwrites: ~
+      overwrites: 
+        A1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    a2:
+      # NAME
+      name: a2_chat
+      #PERM
+      overwrites: 
+        A2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    b1:
+      # NAME
+      name: b1_chat
+      #PERM
+      overwrites: 
+        B1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    b2:
+      # NAME
+      name: b2_chat
+      #PERM
+      overwrites: 
+        B2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    C1:
+      # NAME
+      name: c1_chat
+      #PERM
+      overwrites: 
+        C1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    C2:
+      # NAME
+      name: c2_chat
+      #PERM
+      overwrites: 
+        C2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    D1:
+      # NAME
+      name: d1_chat
+      #PERM
+      overwrites: 
+        D1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    D2:
+      # NAME
+      name: d2_chat
+      #PERM
+      overwrites: 
+        D2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG1:
+      # NAME
+      name: eng1_chat
+      #PERM
+      overwrites: 
+        INT1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG2:
+      # NAME
+      name: eng2_chat
+      #PERM
+      overwrites: 
+        INT2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG3:
+      # NAME
+      name: eng3_chat
+      #PERM
+      overwrites: 
+        INT3: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    SHARP:
+      # NAME
+      name: sharp_chat
+      #PERM
+      overwrites: 
+        SHARP: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN
 
   # VOCAL CHANNELS
   vocal_channels:
 
-    general:
+    a1:
       # NAME
-      name: General
+      name: a1_vocal
       #PERM
-      overwrites: ~
+      overwrites: 
+        A1: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN
-    travail:
+    a2:
       # NAME
-      name: Travail
+      name: a2_vocal
       #PERM
-      overwrites: ~
+      overwrites: 
+        A2: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN
-    gaming:
+    b1:
       # NAME
-      name: Gaming
+      name: b1_vocal
       #PERM
-      overwrites: ~
+      overwrites: 
+        B1: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN
-    musique:
+    b2:
       # NAME
-      name: Musique
+      name: b2_vocal
       #PERM
-      overwrites: ~
+      overwrites: 
+        B2: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN
-    afk:
+    C1:
       # NAME
-      name: AFK
+      name: c1_vocal
       #PERM
-      overwrites: ~
+      overwrites: 
+        C1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    C2:
+      # NAME
+      name: c2_vocal
+      #PERM
+      overwrites: 
+        C2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    D1:
+      # NAME
+      name: d1_vocal
+      #PERM
+      overwrites: 
+        D1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    D2:
+      # NAME
+      name: d2_vocal
+      #PERM
+      overwrites: 
+        D2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG1:
+      # NAME
+      name: eng1_vocal
+      #PERM
+      overwrites: 
+        INT1: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG2:
+      # NAME
+      name: eng2_vocal
+      #PERM
+      overwrites: 
+        INT2: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    ENG3:
+      # NAME
+      name: eng3_vocal
+      #PERM
+      overwrites: 
+        INT3: READ_AND_WRITE_AND_VOCAL
+      default_perm: HIDDEN
+    SHARP:
+      # NAME
+      name: sharp_vocal
+      #PERM
+      overwrites: 
+        SHARP: READ_AND_WRITE_AND_VOCAL
       default_perm: HIDDEN

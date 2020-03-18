@@ -32,9 +32,11 @@ class DiscordCreator:
         self.guild = client.get_guild(guild_id)
         self.guild_id = guild_id
 
-    async def create_role(self):
+    async def create_role(self, roles_to_ignore: Dict):
         for role_name in self.all_roles:
             role = self.all_roles[role_name]
+            if role.name in roles_to_ignore:
+                continue
 
             discord_role: discord.Role = discord.utils.get(self.guild.roles, name=role.name)
 
