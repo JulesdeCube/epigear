@@ -189,3 +189,6 @@ To do that use the argument :
 The bot will then read the roles and channels from the server that you specified in `config.yml`
 and create 2 news files `roles_name_of_the_server.yml` and `server_channels_name_of_the_server.yml` that you can use 
 afterward to build another server with thing config.
+
+In those config files, the permission groups are set map to the ones in `perms_groups.yml`. If the permission
+of a role does not correspond to any of the perm groups in the config, then the group `UNKNOWN` is set in the config.
